@@ -1,38 +1,65 @@
-/* App.css */
-.animated-background {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ 
+ body {
+  overflow-x: hidden;
+ }
+ 
+ /* Enhanced animations */
+ .animated-background {
+  background: linear-gradient(-45deg, #1976d2, #4caf50, #2196f3, #66bb6a);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-}
-
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.85) !important;
+ }
+ 
+ .glass-morphism {
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
-}
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+ }
+ 
+ .glass-morphism:hover {
+  transform: translateY(-5px);
+ }
+ 
+ /* Animations */
+ @keyframes gradient {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+ }
+ 
+ @keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+ }
+ 
+ @keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+ }
+ 
+ /* Typography animations */
+ .title-animation {
+  animation: slideDown 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .fade-in {
+  animation: fadeIn 1.5s ease-out;
+ }
+ 
+ /* Responsive design */
+ @media (max-width: 600px) {
+  .glass-morphism {
+    padding: 2rem !important;
+  }
+ }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.title-animation {
-  animation: slideDown 0.8s ease-out;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-out;
-}
-
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+ 
