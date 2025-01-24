@@ -12,7 +12,8 @@ const formatAmount = (value) => {
 const ResponseDisplay = ({ data }) => {
  const handleFinanceClick = () => {
    const url = `http://localhost:3000?amount=${data.leftOverAmount}`;
-   window.open(url, '_blank', 'width=800,height=600');
+  //  window.open(url, '_blank', 'width=800,height=600');
+  window.location.href = url;
  };
 return (
   <Box sx={{ mt: 4 }}>
@@ -123,7 +124,7 @@ return (
     <Container maxWidth="lg" sx={{ height: '100%' }}>
       <Paper elevation={3} sx={{ p: 4, minHeight: 'calc(100vh - 48px)', width: '100%' }}>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <Typography variant="h5" sx={{ color: '#1976d2' }}>Tax Investment Advisor</Typography>
+          <Typography variant="h5" sx={{ color: '#1976d2' }}>Tax Investment Advisor </Typography>
         </Box>
 
         <Box component="form" onSubmit={handleSubmit}>
